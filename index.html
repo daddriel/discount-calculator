@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/style/main.css">
+    <link rel="icon" type="image/x-icon" href="src/img/calculator.png">
+    <meta property="og:description" content="JS practice, Calculator discount" />
+    <meta property="og:image" content="src/img/og-img.png" />
+    <meta property="og:title" content="Discount calculator" />
+    <meta property="og:type" content="website"/>
+    <title>Discount calculator</title>
+</head>
+
+<body>
+    <header class="p-3 bg-cyan-100 absolute w-screen">
+        <div class="container mx-auto flex items-center content-center flex-col  sm:flex-row">
+            <img src="src/img/calculator.png" class="w-10"  alt="">
+            <span class="px-4 text-cyan-600 font-normal uppercase tracking-widest text-xl">Discount calculator</span>
+        </div>
+        
+    </header>
+
+    <main>
+        <section class=" text-slate-800 font-light container mx-auto flex items-center content-center h-screen">
+            <div class="container mx-auto px-6">
+                <div class="max-w-sm mx-auto p-5 bg-slate-800 text-cyan-100 rounded" id="discount-list">
+                    <p class="py-2 text-xl uppercase font-bold text-center">Discount codes</p>
+                    <ul class="text-center">
+                        <li>20WINTER</li>
+                        <li>30SUMMER</li>
+                        <li>50FRIDAY</li>
+                    </ul>
+                </div>
+                <form class="max-w-sm mx-auto" action="">
+                    <div class="pb-3 flex flex-col w-full mx-auto">
+                        <label  class="uppercase py-2 font-medium" for="input-price">Type here the price of product</label>
+                        <input class="border p-2" id="input-price" type="number" required>
+                        <label class="uppercase py-2 font-medium" for="input-discount">Type here discount CODE or PERCENT</label>
+                        <input class="border p-2" id="input-discount" type="text" required>
+                        <div>
+                            <p class="py-2 uppercase font-medium">Select discount type</p>
+                            <label for="code">Code</label>
+                            <input type="radio" name="typeDiscount" id="code" value="code" required onchange="handleChange(this)" checked>
+                            <label for="percent">Percent</label>
+                            <input type="radio" name="typeDiscount" id="percent" required value="percent" onchange="handleChange(this)">
+                        </div>
+                    </div>
+                    <button class=" bg-cyan-600 text-white p-3 font-normal tracking-widest uppercase hover:bg-transparent border border-cyan-600 max-w-sm w-full hover:text-cyan-600 rounded mx-auto" type="button" onclick="onClickDiscount()">
+                        Calculate
+                    </button>
+
+                    <p id="price-final"></p>
+                </form>
+            </div>
+            
+        </section>
+    </main>
+    <script src="./src/js/descuentos.js"></script>
+</body>
+
+</html>
