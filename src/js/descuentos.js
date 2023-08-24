@@ -26,21 +26,25 @@ function onClickDiscount() {
 function compareDiscount() {
     const inputDiscount = document.getElementById('input-discount').value.toUpperCase();
     const typeDiscount = document.querySelector('input[name="typeDiscount"]:checked').value;
-
+    console.log(typeDiscount);
+    console.log(inputDiscount);
     var res = 0;
     if (typeDiscount == 'percent') {
         res = document.getElementById('input-discount').value;
     } else {
         for (const [key, value] of Object.entries(listDiscount)) {
             if (inputDiscount == key) {
+                console.log(key, value);
                 res = value;
-            }
+                return res;
+            }   
             else {
                 res = 'error';
             }
         }
     }
     return res;
+    
 }
 
 function handleChange(src) {
